@@ -9,12 +9,9 @@ RUN apt-get update && \
 	apt-get -y install \
  curl wget \
  php5.6 php5.6-cli php5.6-fpm php5.6-common php5.6-bcmath php5.6-curl php5.6-fpm php5.6-gd php5.6-intl php5.6-json php5.6-ldap php5.6-mbstring php5.6-mcrypt php5.6-mysql php5.6-odbc php5.6-opcache php5.6-readline php5.6-soap php5.6-sybase php5.6-xml php5.6-xmlrpc php5.6-zip  libapache2-mod-php5.6\
- php-xdebug mariadb-client\
+ mariadb-client\
  imagemagick && \
  a2enmod rewrite rewrite vhost_alias headers
-
-# Set up xdebug
-COPY 20-xdebug.ini /etc/php/7.1/apache2/conf.d/20-xdebug.ini
 
 # Create the workdir
 RUN mkdir -p /var/www/html

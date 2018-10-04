@@ -9,12 +9,9 @@ RUN apt-get update && \
 	apt-get -y install \
  curl wget \
  php7.1 php7.1-cli php7.1-fpm php7.1-common php7.1-bcmath php7.1-curl php7.1-fpm php7.1-gd php7.1-intl php7.1-json php7.1-ldap php7.1-mbstring php7.1-mcrypt php7.1-mysql php7.1-odbc php7.1-opcache php7.1-readline php7.1-soap php7.1-sybase php7.1-xml php7.1-xmlrpc php7.1-zip  libapache2-mod-php7.1\
- php-xdebug mariadb-client\
+ mariadb-client\
  imagemagick && \
  a2enmod rewrite rewrite vhost_alias headers
-
-# Set up xdebug
-COPY 20-xdebug.ini /etc/php/7.1/apache2/conf.d/20-xdebug.ini
 
 # Create the workdir
 RUN mkdir -p /var/www/html

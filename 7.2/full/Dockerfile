@@ -1,5 +1,9 @@
 FROM imid/devbuntu:7.2-base
 
+# Set up xdebug
+RUN apt-get update && apt-get install -y php-xdebug
+COPY 20-xdebug.ini /etc/php/7.2/apache2/conf.d/20-xdebug.ini
+
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php \
     && mv composer.phar /usr/local/bin/ \
