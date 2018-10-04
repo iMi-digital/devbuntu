@@ -8,6 +8,13 @@ It has php, apache2, composer, phive, [iMi's special iRobo fork](https://github.
 
 Currently beta.
 
+# Supported tags and respective `Dockerfile` links
+
+* `7.2`, `latest` [(Dockerfile)](https://github.com/iMi-digital/devbuntu/tree/master/7.2)
+* `7.1` [(Dockerfile)](https://github.com/iMi-digital/devbuntu/tree/master/7.1)
+* `7.0` [(Dockerfile)](https://github.com/iMi-digital/devbuntu/tree/master/7.0)
+* `5.6` [(Dockerfile)](https://github.com/iMi-digital/devbuntu/tree/master/5.6)
+
 ## Usage
 
 Simply run 
