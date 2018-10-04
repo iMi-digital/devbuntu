@@ -10,10 +10,12 @@ Currently beta.
 
 # Supported tags and respective `Dockerfile` links
 
-* `7.2`, `latest` [(Dockerfile)](https://github.com/iMi-digital/devbuntu/tree/master/7.2)
-* `7.1` [(Dockerfile)](https://github.com/iMi-digital/devbuntu/tree/master/7.1)
-* `7.0` [(Dockerfile)](https://github.com/iMi-digital/devbuntu/tree/master/7.0)
-* `5.6` [(Dockerfile)](https://github.com/iMi-digital/devbuntu/tree/master/5.6)
+* `7.2`, `latest` [(Dockerfile)](https://github.com/iMi-digital/devbuntu/tree/master/7.2/full)
+* `7.1` [(Dockerfile)](https://github.com/iMi-digital/devbuntu/tree/master/7.1/full)
+* `7.0` [(Dockerfile)](https://github.com/iMi-digital/devbuntu/tree/master/7.0/full)
+* `5.6` [(Dockerfile)](https://github.com/iMi-digital/devbuntu/tree/master/5.6/full)
+
+Each tag is also available as a "base" version with only php and apache installed, no tools.
 
 ## Usage
 
