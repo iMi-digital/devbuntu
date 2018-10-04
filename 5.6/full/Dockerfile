@@ -1,7 +1,10 @@
 FROM imid/devbuntu:5.6-base
 
+# Install Git
+RUN apt-get update && apt-get install -y git
+
 # Set up xdebug
-RUN apt-get update && apt-get install -y php-xdebug
+RUN apt-get install -y php-xdebug
 COPY 20-xdebug.ini /etc/php/5.6/apache2/conf.d/20-xdebug.ini
 
 # Install composer
