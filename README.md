@@ -4,7 +4,7 @@
 
 > iMi standard PHP dev box as docker image.
 
-It has php, apache2m composer, phive, [iMi's special iRobo fork](https://github.com/iMi-digital/iRobo), none js, yarn, bower and gulp installed.
+It has php, apache2, composer, phive, [iMi's special iRobo fork](https://github.com/iMi-digital/iRobo), none js, yarn, bower and gulp installed.
 
 Currently beta.
 
