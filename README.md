@@ -13,7 +13,7 @@ Currently beta.
 Simply run 
 
 ```bash
-docker run -v ./:/var/www/html -p 80:80 --name devbuntu -d imid/devbuntu
+docker run -v $PWD:/var/www/html -p 80:80 --name devbuntu -d imid/devbuntu
 ```
 
 This will run the image in the latest stable php version (7.2) with your current directory mounted to `/var/www/html`.
