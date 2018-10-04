@@ -7,7 +7,7 @@ RUN apt-get update && \
 	apt-get update && \
 	apt-get -y install \
  php7.1 php7.1-cli php7.1-fpm php7.1-common php7.1-bcmath php7.1-curl php7.1-fpm php7.1-gd php7.1-intl php7.1-json php7.1-ldap php7.1-mbstring php7.1-mcrypt php7.1-mysql php7.1-odbc php7.1-opcache php7.1-readline php7.1-soap php7.1-sybase php7.1-xml php7.1-xmlrpc php7.1-zip  libapache2-mod-php7.1\
- php-xdebug\
+ php-xdebug mariadb-client\
  imagemagick
 
 RUN apt-get update && \
@@ -25,7 +25,8 @@ RUN curl -sSLo phive.phar https://phar.io/releases/phive.phar \
 	&& mv phive.phar /usr/bin/phive
 
 
-RUN phive install -g --trust-gpg-keys 993876E71CF55503 iMi-digital/irobo 
+RUN phive install -g --trust-gpg-keys 993876E71CF55503 iMi-digital/irobo && \
+phive install -g --trust-gpg-keys 59B3B8B6C924630C n98-magerun2
 
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - \
 	&& apt-get install -y nodejs \

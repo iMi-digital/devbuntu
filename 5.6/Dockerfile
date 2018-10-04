@@ -7,7 +7,7 @@ RUN apt-get update && \
 	apt-get update && \
 	apt-get -y install \
  php5.6 php5.6-cli php5.6-fpm php5.6-common php5.6-bcmath php5.6-curl php5.6-fpm php5.6-gd php5.6-intl php5.6-json php5.6-ldap php5.6-mbstring php5.6-mcrypt php5.6-mysql php5.6-odbc php5.6-opcache php5.6-readline php5.6-soap php5.6-sybase php5.6-xml php5.6-xmlrpc php5.6-zip  libapache2-mod-php5.6\
- php-xdebug\
+ php-xdebug mariadb-client\
  imagemagick
 
 RUN apt-get update && \
@@ -24,8 +24,8 @@ RUN curl -sSLo phive.phar https://phar.io/releases/phive.phar \
 	&& chmod +x phive.phar \
 	&& mv phive.phar /usr/bin/phive
 
-
-RUN phive install -g --trust-gpg-keys 993876E71CF55503 iMi-digital/irobo 
+RUN phive install -g --trust-gpg-keys 993876E71CF55503 iMi-digital/irobo && \
+ phive install -g --trust-gpg-keys 59B3B8B6C924630C n98-magerun2
 
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - \
 	&& apt-get install -y nodejs \
