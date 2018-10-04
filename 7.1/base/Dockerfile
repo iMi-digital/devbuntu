@@ -13,6 +13,9 @@ RUN apt-get update && \
  imagemagick && \
  a2enmod rewrite rewrite vhost_alias headers
 
+# Set up xdebug
+COPY 20-xdebug.ini /etc/php/7.1/apache2/conf.d/20-xdebug.ini
+
 # Create the workdir
 RUN mkdir -p /var/www/html
 WORKDIR /var/www/html
