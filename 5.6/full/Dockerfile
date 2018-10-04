@@ -1,17 +1,4 @@
-FROM ubuntu:16.04
-
-# Install php and apache2
-RUN apt-get update && \
-	apt-get -y install software-properties-common && \
-	LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php && \
-	LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/apache2 && \
-	apt-get update && \
-	apt-get -y install 
- curl wget \
- php7.2 php7.2-cli php7.2-fpm php7.2-common php7.2-bcmath php7.2-curl php7.2-fpm php7.2-gd php7.2-intl php7.2-json php7.2-ldap php7.2-mbstring php7.2-mysql php7.2-odbc php7.2-opcache php7.2-readline php7.2-soap php7.2-sybase php7.2-xml php7.2-xmlrpc php7.2-zip  libapache2-mod-php7.2\
- php-xdebug mariadb-client\
- imagemagick && \
- a2enmod rewrite rewrite vhost_alias headers
+FROM imid/devbuntu:5.6-base
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php \
@@ -21,7 +8,7 @@ RUN curl -sS https://getcomposer.org/installer | php \
 # Install phive
 RUN curl -sSLo phive.phar https://phar.io/releases/phive.phar \
 	&& curl -sSLo phive.phar.asc https://phar.io/releases/phive.phar.asc \
-	&& gpg --keyserver hkps.pool.sks-keyservers.net --recv-keys 0x9D8A98B29B2D5D79 \
+	&& gpg --keyserver hkps.pool.sks-keyservers.net --recv-keys 0x9d8a98b29b2d5d79 \
 	&& gpg --verify phive.phar.asc phive.phar \
 	&& chmod +x phive.phar \
 	&& mv phive.phar /usr/bin/phive
@@ -37,12 +24,3 @@ RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - \
 	&& echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
 	&& apt-get update && apt-get install yarn \
 	&& yarn global add bower gulp
-
-# Create the workdir
-RUN mkdir -p /var/www/html
-WORKDIR /var/www/html
-EXPOSE 80
-
-# Let apache run in foreground
-COPY apache2-foreground /usr/local/bin/
-CMD ["apache2-foreground"]
