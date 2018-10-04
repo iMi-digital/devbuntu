@@ -48,3 +48,7 @@ General help and feedback is below in the comments.
 In need of support or an implementation of a modul in an existing system, [feel free to contact us](mailto:digital@iMi.de). In this case, we will provide full service support for a fee.
 
 Of course we provide development of closed-source modules or full magento shops as well.
+
+## License
+
+Copyright 2018 iMi digital GmbH Licensed under MIT
