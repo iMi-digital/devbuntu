@@ -35,6 +35,14 @@ docker exec -it devbuntu bash
 
 This will throw you in a bash session inside the container.
 
+### Change apache webroot
+
+You can change the apache webroot by using the `APACHE_DOCUMENT_ROOT` environment variable, for example:
+
+```bash
+docker run -v $PWD:/var/www/html -p 80:80 -e APACHE_DOCUMENT_ROOT=/var/www/html/public --name devbuntu -d imid/devbuntu
+```
+
 ## Contributing
 
 If you run into any issues with the image or discover a bug, feel free to [create a new issue](https://github.com/iMi-digital/devbuntu/issues/new) on Github.

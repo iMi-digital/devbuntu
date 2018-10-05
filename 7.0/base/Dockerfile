@@ -13,6 +13,10 @@ RUN apt-get update && \
  imagemagick && \
  a2enmod rewrite rewrite vhost_alias headers
 
+# Custom apache config
+COPY apache.conf /etc/apache2/sites-available/000-default.conf
+ENV APACHE_DOCUMENT_ROOT /var/www/html # Placeholder, you can change this at runtime
+
 # Create the workdir
 RUN mkdir -p /var/www/html
 WORKDIR /var/www/html
