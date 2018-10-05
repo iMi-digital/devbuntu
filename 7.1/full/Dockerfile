@@ -1,7 +1,10 @@
 FROM imid/devbuntu:7.1-base
 
+RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+
 # Install Git
-RUN apt-get update && apt-get install -y git
+RUN apt-get update && apt-get install -y git git-lfs
+
 
 # Set up xdebug
 RUN apt-get install -y php-xdebug
