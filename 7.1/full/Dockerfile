@@ -1,6 +1,6 @@
 FROM imid/devbuntu:7.1-base
 
-RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash
 
 # Install Git
 RUN apt-get update && apt-get install -y git git-lfs
