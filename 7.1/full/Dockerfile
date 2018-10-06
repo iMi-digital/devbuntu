@@ -1,7 +1,9 @@
 FROM imid/devbuntu:7.1-base
 
+RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+
 # Install Git
-RUN apt-get update && apt-get install -y git
+RUN apt-get update && apt-get install -y git git-lfs
 
 # Set up xdebug
 RUN apt-get install -y php-xdebug
@@ -31,3 +33,7 @@ RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - \
 	&& echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
 	&& apt-get update && apt-get install yarn \
 	&& yarn global add bower gulp
+
+# Install Cypress.io Dependencies
+RUN apt-get install -y xvfb libgtk2.0-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2
+
