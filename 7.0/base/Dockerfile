@@ -7,7 +7,7 @@ RUN apt-get update && \
 	LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/apache2 && \
 	apt-get update && \
 	apt-get -y install \
- curl wget \
+ curl wget unzip \
  php7.0 php7.0-cli php7.0-fpm php7.0-common php7.0-bcmath php7.0-curl php7.0-fpm php7.0-gd php7.0-intl php7.0-json php7.0-ldap php7.0-mbstring php7.0-mcrypt php7.0-mysql php7.0-odbc php7.0-opcache php7.0-readline php7.0-soap php7.0-sybase php7.0-xml php7.0-xmlrpc php7.0-zip  libapache2-mod-php7.0\
  mariadb-client\
  imagemagick && \
