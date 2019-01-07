@@ -31,8 +31,8 @@ RUN curl -sSLo phive.phar https://phar.io/releases/phive.phar \
 	&& mv phive.phar /usr/bin/phive
 
 # Install iMi special irobo and n98-magerun2
-RUN phive install -g --trust-gpg-keys 993876E71CF55503 iMi-digital/irobo && \
- phive install -g --trust-gpg-keys 59B3B8B6C924630C n98-magerun2
+RUN phive install -g --trust-gpg-keys 993876E71CF55503,DD545A4C2E198F79 iMi-digital/irobo && \
+ phive install -g --trust-gpg-keys 993876E71CF55503,DD545A4C2E198F79 n98-magerun2
 
 # Install frontend build stuff
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - \
