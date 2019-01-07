@@ -48,7 +48,7 @@ docker run -v $PWD:/var/www/html -p 80:80 -e APACHE_DOCUMENT_ROOT=/var/www/html/
 Apache runs with the user `www-data`. To ensure correct permissions, it sometimes is useful to become the user running the webserver. To do this inside the docker container, simply run
 
 ```bash
-~$ www-data
+~$ w3d
 ```
 
 ## Contributing
