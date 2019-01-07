@@ -44,3 +44,6 @@ RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - \
 
 # Install Cypress.io Dependencies
 RUN apt-get install -y xvfb libgtk2.0-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2
+
+# Install grunt
+RUN npm install -g grunt-cli
