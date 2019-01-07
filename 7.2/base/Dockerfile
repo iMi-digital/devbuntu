@@ -9,7 +9,7 @@ RUN apt-get update && \
 	apt-get -y install \
  curl wget unzip \
  php7.2 php7.2-cli php7.2-fpm php7.2-common php7.2-bcmath php7.2-curl php7.2-fpm php7.2-gd php7.2-intl php7.2-json php7.2-ldap php7.2-mbstring php7.2-mysql php7.2-odbc php7.2-opcache php7.2-readline php7.2-soap php7.2-sybase php7.2-xml php7.2-xmlrpc php7.2-zip  libapache2-mod-php7.2\
- mariadb-client\
+ mariadb-client vim nano\
  imagemagick && \
  a2enmod rewrite rewrite vhost_alias headers
 

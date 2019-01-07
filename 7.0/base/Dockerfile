@@ -9,9 +9,9 @@ RUN apt-get update && \
 	apt-get -y install \
  curl wget unzip \
  php7.0 php7.0-cli php7.0-fpm php7.0-common php7.0-bcmath php7.0-curl php7.0-fpm php7.0-gd php7.0-intl php7.0-json php7.0-ldap php7.0-mbstring php7.0-mcrypt php7.0-mysql php7.0-odbc php7.0-opcache php7.0-readline php7.0-soap php7.0-sybase php7.0-xml php7.0-xmlrpc php7.0-zip  libapache2-mod-php7.0\
- mariadb-client\
+ mariadb-client vim nano\
  imagemagick && \
- a2enmod rewrite rewrite vhost_alias headers
+ a2enmod rewrite rewrite vhost_alias headers  
 
 # Custom apache config
 COPY apache.conf /etc/apache2/sites-available/000-default.conf
