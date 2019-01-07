@@ -22,6 +22,10 @@ RUN mkdir -p /var/www/html
 WORKDIR /var/www/html
 EXPOSE 80
 
+# Use www-data
+ADD www-data.sh /usr/local/bin/www-data
+RUN chmod +x /usr/local/bin/www-data
+
 # Let apache run in foreground
 COPY apache2-foreground /usr/local/bin/
 CMD ["apache2-foreground"]
