@@ -15,7 +15,7 @@ RUN apt-get install -y php-xdebug
 COPY 20-xdebug.ini /etc/php/7.0/apache2/conf.d/20-xdebug.ini
 
 # Usefull tools
-RUN apt-get install -y vim pv
+RUN apt-get install -y pv
 
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php \
