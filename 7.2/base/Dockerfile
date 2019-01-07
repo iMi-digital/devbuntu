@@ -14,14 +14,20 @@ RUN apt-get update && \
  a2enmod rewrite rewrite vhost_alias headers
 
 # Custom apache config
-COPY apache.conf /etc/apache2/sites-available/000-default.conf
 ENV APACHE_DOCUMENT_ROOT /var/www/html # Placeholder, you can change this at runtime
+COPY apache.conf /etc/apache2/sites-available/000-default.conf
 
 # Create the workdir
 RUN mkdir -p /var/www/html
 WORKDIR /var/www/html
 EXPOSE 80
 
+# Use www-data
+ADD www-data.sh /usr/local/bin/w3d
+RUN chmod +x /usr/local/bin/w3d
+
 # Let apache run in foreground
 COPY apache2-foreground /usr/local/bin/
 CMD ["apache2-foreground"]
+
+

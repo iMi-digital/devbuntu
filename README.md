@@ -43,6 +43,14 @@ You can change the apache webroot by using the `APACHE_DOCUMENT_ROOT` environmen
 docker run -v $PWD:/var/www/html -p 80:80 -e APACHE_DOCUMENT_ROOT=/var/www/html/public --name devbuntu -d imid/devbuntu
 ```
 
+### Becoming www-data inside of the container
+
+Apache runs with the user `www-data`. To ensure correct permissions, it sometimes is useful to become the user running the webserver. To do this inside the docker container, simply run
+
+```bash
+~$ www-data
+```
+
 ## Contributing
 
 If you run into any issues with the image or discover a bug, feel free to [create a new issue](https://github.com/iMi-digital/devbuntu/issues/new) on Github.
