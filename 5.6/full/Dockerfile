@@ -1,3 +1,8 @@
+#
+# Generated Dockerfile!
+# DO NOT EDIT DIRECTLY!
+#
+
 FROM imid/devbuntu:5.6-base
 
 RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash
