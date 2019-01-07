@@ -40,7 +40,7 @@ RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - \
 	&& curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - \
 	&& echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
 	&& apt-get update && apt-get install yarn \
-	&& yarn global add bower gulp
+	&& yarn global add bower gulp grunt-cli
 
 # Install Cypress.io Dependencies
 RUN apt-get install -y xvfb libgtk2.0-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2
